@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,8 +22,16 @@ export const IdeaForm = ({ onSubmit, isLoading }: IdeaFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto">
-      <div className={`p-1 rounded-lg shadow-lg ${theme === 'dark' ? 'bg-gradient-to-r from-blue-600/30 to-green-500/30' : 'bg-gradient-to-r from-blue-600 to-green-500'}`}>
-        <div className={`p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+      <div
+        className={`p-1 rounded-lg shadow-lg ${theme === "dark"
+            ? "bg-gradient-to-r from-blue-600/30 to-green-500/30"
+            : "bg-gradient-to-r from-blue-600 to-green-500"
+          }`}
+      >
+        <div
+          className={`p-4 rounded-lg ${theme === "dark" ? "bg-gray-900" : "bg-white"
+            }`}
+        >
           <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
             Décrivez votre idée en détail
           </label>
@@ -32,16 +39,19 @@ export const IdeaForm = ({ onSubmit, isLoading }: IdeaFormProps) => {
             placeholder="Exemple: 'Je veux ouvrir un café entièrement automatisé sans employés' ou 'Je veux lancer un service de livraison de repas diététiques personnalisés'"
             value={idea}
             onChange={(e) => setIdea(e.target.value)}
-            className={`min-h-[150px] text-lg mb-4 border-none focus-visible:ring-2 focus-visible:ring-blue-500 ${theme === 'dark' ? 'bg-gray-800 placeholder:text-gray-400' : 'bg-gray-50 placeholder:text-gray-500'}`}
+            className={`min-h-[150px] text-lg mb-4 border-none focus-visible:ring-2 focus-visible:ring-blue-500 ${theme === "dark"
+                ? "bg-gray-800 placeholder:text-gray-400"
+                : "bg-gray-50 placeholder:text-gray-500"
+              }`}
           />
-          <div className="flex items-center gap-3 justify-between">
+          <div className="flex flex-col sm:flex-row items-center gap-3 justify-between">
             <div className="text-xs text-gray-500 dark:text-gray-400">
               {idea.length} caractères
             </div>
-            <Button 
+            <Button
               type="submit"
               disabled={isLoading || !idea.trim()}
-              className="py-6 px-8 text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300"
+              className="py-3 px-5 sm:py-4 sm:px-8 text-base sm:text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 w-full sm:w-auto flex items-center justify-center"
             >
               {isLoading ? (
                 <>
@@ -62,18 +72,33 @@ export const IdeaForm = ({ onSubmit, isLoading }: IdeaFormProps) => {
           </div>
         </div>
       </div>
-      
+
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className={`p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800/50' : 'bg-white/80'} shadow-sm`}>
+        <div
+          className={`p-4 rounded-lg ${theme === "dark" ? "bg-gray-800/50" : "bg-white/80"
+            } shadow-sm`}
+        >
           <h4 className="font-medium mb-2 text-sm">Exemple d'idée #1</h4>
-          <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-            "Je veux créer une application qui met en relation des personnes âgées avec des étudiants pour du soutien technique et des cours d'informatique à domicile."
+          <p
+            className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+          >
+            "Je veux créer une application qui met en relation des personnes
+            âgées avec des étudiants pour du soutien technique et des cours
+            d'informatique à domicile."
           </p>
         </div>
-        <div className={`p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800/50' : 'bg-white/80'} shadow-sm`}>
+        <div
+          className={`p-4 rounded-lg ${theme === "dark" ? "bg-gray-800/50" : "bg-white/80"
+            } shadow-sm`}
+        >
           <h4 className="font-medium mb-2 text-sm">Exemple d'idée #2</h4>
-          <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-            "Je souhaite lancer une plateforme de location d'espaces de stockage entre particuliers, comme un Airbnb des garde-meubles."
+          <p
+            className={`text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"
+              }`}
+          >
+            "Je souhaite lancer une plateforme de location d'espaces de
+            stockage entre particuliers, comme un Airbnb des garde-meubles."
           </p>
         </div>
       </div>

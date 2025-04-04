@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="font-bold text-xl mb-2 gradient-text">IdéaTest</div>
           <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
             Validez vos idées de business avec l'aide de l'IA
-            Développer par Sollea Ai
+            Développer par Sollea Ai & BEN8N
           </p>
         </div>
 
